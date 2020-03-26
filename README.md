@@ -1,6 +1,6 @@
 # HTML To PDF using AWS Lambda Functions and Layers with Serverless
 
-# Once run locally once, you don't need to run it again. The API endpoint will stay the same. You only ever need to deploy if you're making tweaks or changes to the any of the layers, or htmlToPdf directories. You can re-initialise it with
+### Once run locally once, you don't need to run it again. The API endpoint will stay the same. You only ever need to deploy if you're making tweaks or changes to the any of the layers, or htmlToPdf directories. You can re-initialise it with
 
 `sudo serverless deploy --aws-profile profile_name --region eu-west-2`
 
