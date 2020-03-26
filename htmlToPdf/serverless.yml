@@ -4,8 +4,8 @@ provider:
   name: aws
   runtime: nodejs12.x
   stage: ${opt:stage, 'dev'}
-  environment:
-    S3_BUCKET: your-media-bucket-name
+  deploymentBucket:
+    name: ihasco-test-pdf-bucket
 
 functions:
   htmlToPdf:
@@ -15,7 +15,7 @@ functions:
     events:
       - http:
           path: api/htmltopdf
-          method: get
+          method: post
           cors: true
           integration: lambda
 

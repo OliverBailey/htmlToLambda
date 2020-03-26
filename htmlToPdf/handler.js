@@ -24,7 +24,7 @@ export const htmlToPdf = async event => {
         // html = Body.toString()
 
         // OR get the HTML string from request body
-        // html = event.body.html
+        html = event.body.html
 
         // To generate HTML with dynamic data there are some popular template engines 
         // like hbs, pug, Mustache, ejs, etc.

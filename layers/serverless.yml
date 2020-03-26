@@ -3,6 +3,8 @@ service: executables-layer
 provider:
   name: aws
   stage: ${opt:stage, 'dev'}
+  deploymentBucket:
+    name: ihasco-test-pdf-bucket
 
 layers:
   htmlToPdf:
@@ -18,3 +20,4 @@ resources:
         Ref: HtmlToPdfLambdaLayer
       Export:
         Name: HtmlToPdfLambdaLayer-${self:provider.stage}
+

@@ -1,12 +1,18 @@
 # HTML To PDF using AWS Lambda Functions and Layers with Serverless
 
+# Once run locally once, you don't need to run it again. The API endpoint will stay the same. You only ever need to deploy if you're making tweaks or changes to the any of the layers, or htmlToPdf directories. You can re-initialise it with
+
+`sudo serverless deploy --aws-profile profile_name --region eu-west-2`
+
+
+
 [html-pdf](https://www.npmjs.com/package/html-pdf) is used to convert html to pdf
 
 ## Prerequisite
 1. [Nodejs](https://nodejs.org/en/download/)
 2. Install Serverless globally 
 
-```bash 
+```bash
 npm i -g serverless
 ```
 
@@ -62,7 +68,11 @@ process.env.FONTCONFIG_PATH = '/opt'
 process.env.LD_LIBRARY_PATH = '/opt'
 ```
 
+These are env vars set within. No need to add as an Env var to the S3 bucket.
+
 [AWS Environment Variables](https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html)
+
+This only needs to be set for the S3_BUCKET
 
 ## Deployment
 Step 1. First deploy the layer.
@@ -109,3 +119,9 @@ For more fonts add .ttf font files in executable folder and redeploy the layer a
 
 ## Reference
 1. https://github.com/naeemshaikh27/phantom-lambda-fontconfig-pack
+
+SLS-deploy script help
+
+`sudo serverless deploy --aws-profile profile_name --region eu-west-2`
+
+serverless.yml contains the deploymentBucket name
